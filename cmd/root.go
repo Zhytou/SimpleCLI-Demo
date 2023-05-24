@@ -14,13 +14,18 @@ This application is a demo to show how to quickly create a Cobra application.`,
     },
 }
 
-
-// Execute executes the root command.
 func Execute() error {
     return rootCmd.Execute()
 }
 
 func init(){
+    // add flag
+    rootCmd.Flags().BoolP("version", "v", false, "print simple-cli version")
+
+    // add subcommand flag
+    echoCmd.Flags().BoolP("flip", "f", false, "print in reverse order")
+    
+    // add subcommand
     rootCmd.AddCommand(versionCmd)
     rootCmd.AddCommand(echoCmd)
 }

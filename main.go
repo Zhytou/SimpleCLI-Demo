@@ -2,9 +2,14 @@ package main
 
 import (
 	"fmt"
+	"os"
+
+	"simple-cli/cmd"
 )
 
-
 func main() {
-	fmt.Println("simple cli demo")
+	if err := cmd.Execute(); err!= nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
 }
