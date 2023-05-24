@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"fmt"
+
 	"github.com/spf13/cobra"
 )
 
@@ -10,6 +12,6 @@ var versionCmd = &cobra.Command{
 	Long: `Simple-cli version reports the simple-cli version used to build each of the named
 	executable files.`,
 	Run: func(cmd *cobra.Command, args []string) {
-
+		fmt.Println("simple-cli v1.0.0")
 	},
 }
